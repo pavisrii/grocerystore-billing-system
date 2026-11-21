@@ -87,37 +87,31 @@ public class App {
         }
 
         // Calculate discount
+        double discount = 0;
+        int discountPercentage = 0;
 
-        // Calculate discount
+        if (totalBill >= 1000) {
+            discountPercentage = 10;
+            discount = totalBill * 0.10;
+        } else if (totalBill > 500) {
+            discountPercentage = 4;
+            discount = totalBill * 0.04;
+        }
 
-double discount = 0;
-int discountPercentage = 0;
+        // Calculate final amount
+        double finalAmount = totalBill - discount;
 
-if (totalBill >= 1000) {
-    discountPercentage = 10;
-    discount = totalBill * 0.10;
-}
-else if (totalBill >= 500) {
-    discountPercentage = 5;
-    discount = totalBill * 0.05;
-}
-
-// Calculate final amount
-
-double finalAmount = totalBill - discount;
-
-// Display final bill
-
-System.out.println("--------------------------------");
-System.out.println("Total Amount : Rs." + totalBill);
-System.out.println("Discount     : Rs." + discount
-        + " (" + discountPercentage + "%) - "
-        + (discountPercentage == 10 ? "Above Rs.1000" :
-           discountPercentage == 5 ? "Rs.500 - Rs.999" :
-           "Below Rs.500"));
-System.out.println("Final Amount : Rs." + finalAmount);
-System.out.println("================================");
-System.out.println("Thank you for shopping!");
+        // Display final bill
+        System.out.println("--------------------------------");
+        System.out.println("Total Amount : Rs." + totalBill);
+        System.out.println("Discount     : Rs." + discount
+                + " (" + discountPercentage + "%) - "
+                + (discountPercentage == 10 ? "Rs.1000 and above" :
+                   discountPercentage == 4 ? "Above Rs.500 and below Rs.1000" :
+                   "Rs.500 or below"));
+        System.out.println("Final Amount : Rs." + finalAmount);
+        System.out.println("================================");
+        System.out.println("Thank you for shopping!");
 
         sc.close();
     }
