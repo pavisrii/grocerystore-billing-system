@@ -94,8 +94,8 @@ public class App {
             discountPercentage = 10;
             discount = totalBill * 0.10;
         } else if (totalBill > 500) {
-            discountPercentage = 5;
-            discount = totalBill * 0.05;
+            discountPercentage = 4;
+            discount = totalBill * 0.04;
         }
 
         // Calculate final amount
@@ -107,7 +107,7 @@ public class App {
         System.out.println("Discount     : Rs." + discount
                 + " (" + discountPercentage + "%) - "
                 + (discountPercentage == 10 ? "Rs.1000 and above" :
-                   discountPercentage == 5 ? "Above Rs.500 and below Rs.1000" :
+                   discountPercentage == 4 ? "Above Rs.500 and below Rs.1000" :
                    "Rs.500 or below"));
         System.out.println("Final Amount : Rs." + finalAmount);
         System.out.println("================================");
